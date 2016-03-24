@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // アプリを起動したときに初期値を設定する
+        // isFirstLaunchキーの値が存在しない場合だけデータを作成する
+        // registerDefaultsはディスクに値を保存しないので注意！
+        let ud = NSUserDefaults.standardUserDefaults()
+        let dic = ["isFirstLaunch": true]
+        ud.registerDefaults(dic)
+        
         return true
     }
 
